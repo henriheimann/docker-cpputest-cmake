@@ -7,7 +7,8 @@ RUN apt-get update && apt-get install -y cmake && \
     cd cpputest && \
     autoreconf . -i && \
     ./configure && \
-    make && \
-    export CPPUTEST_HOME=$(pwd)
+    make
+
+ENV CPPUTEST_HOME=/usr/src/cpputest
 
 WORKDIR /root
